@@ -1,0 +1,22 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+{% block extrahead %}
+
+{% endblock %}
+    <main role="main">
+        <div class="container col-12 mt-3">
+            <div class="col-12  mt-3">
+                <h3>Bienvenido {{request.user.first_name}} {{request.user.last_name}} </h3> 
+                <div class="row mt-4 mb-4">
+                    <div class="col-12 col-sm-3 mb-3">
+                        <a href="{% url 'users_main' %}" class="button">Gestión Usuarios</a>       
+                    </div>                   
+                    <div class="col-12 col-sm-3 mb-3">
+                        <a href="{% url 'ejemplos_main' %}" class="button">Gestión Ejemplos</a>               
+                    </div>                                       
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

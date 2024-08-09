@@ -1,0 +1,24 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+{% block extrahead %}
+{% endblock %}
+    <main role="main">
+        <div class="container col-12 mt-3">
+            <div class="col-12  mt-3">
+                <h3>Listado Perfil {{group.name}} </h3> 
+                <div class="row mt-4 mb-4">
+                    <div class="col-12 col-sm-3 mb-3">
+                        <a href="{% url 'list_user_active' group.id %}" class="button form-control">Activos</a>
+                    </div>
+                    <div class="col-12 col-sm-3 mb-3">
+                        <a href="{% url 'list_user_block' group.id %}" class="button form-control">Bloqueados</a>
+                    </div>
+                    <div class="col-12 col-sm-3 mb-3">
+                        <a href="{% url 'users_main' %}" class="button button--gray form-control">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
