@@ -4,12 +4,13 @@
 
 
 from pathlib import Path
+import sys
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-
-
+from seleccionar_pa_co import parametros_co
+from tkinter import *
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Pedro\Desktop\prueba\Inicio_sesion_Definitivo\build\assets\frame0")
 
@@ -207,7 +208,7 @@ def iniciar_sesion(window):
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: Toplevel(parametros_co(window)),
         relief="flat"
     )
     button_2.place(

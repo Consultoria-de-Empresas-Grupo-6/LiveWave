@@ -7,18 +7,16 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-
-
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Toplevel
+from conexion_maquinas import conexion_maquinas
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Pedro\Desktop\prueba\seleccionar_pa_co\build\assets\frame0")
-
+from paramatros import parametros
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 def parametros_co(window):
-
     canvas = Canvas(
         window,
         bg = "#EAEAEA",
@@ -55,24 +53,24 @@ def parametros_co(window):
         outline="")
 
     canvas.create_rectangle(
-        2.0,
+        0.0,
         60.0,
-        1458.0,
+        1454.0,
         127.0,
         fill="#A7A7A7",
         outline="")
 
     canvas.create_rectangle(
         0.0,
-        126.0,
+        189.0,
         602.0,
         1024.0,
         fill="#BDBFBF",
         outline="")
 
     canvas.create_text(
-        451.0,
-        77.0,
+        500.0,
+        76.0,
         anchor="nw",
         text="ENSAYO",
         fill="#FFFFFF",
@@ -80,9 +78,9 @@ def parametros_co(window):
     )
 
     canvas.create_rectangle(
-        2.0,
+        0.0,
         117.0,
-        1472.0,
+        1468.0,
         189.0,
         fill="#A5CAEA",
         outline="")
@@ -109,12 +107,12 @@ def parametros_co(window):
         image=button_image_1,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
+        command=lambda: Toplevel(conexion_maquinas(window)),
         relief="flat"
     )
     button_1.place(
-        x=134.0,
-        y=350.0,
+        x=205.0,
+        y=355.0,
         width=464.0,
         height=230.0
     )
@@ -125,7 +123,7 @@ def parametros_co(window):
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: Toplevel(parametros(window)),
         relief="flat"
     )
     button_2.place(

@@ -18,6 +18,7 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 from iniciar_sesion import *
+from seleccionar_pa_co import parametros_co
 def main():
     window = Tk()
     window.title("LiveWave Grapher")
